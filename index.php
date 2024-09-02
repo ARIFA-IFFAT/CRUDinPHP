@@ -15,6 +15,12 @@ if (isset($_POST["submit"])) {
   $place = htmlspecialchars($_POST["place"]);
   $phone = preg_replace('/[^0-9]/', '', $_POST["phone"]);
 
+//Escape sting to prevent SQL Injection
+$username = mysqli_real_escape_string($con,$username);
+$email = mysqli_real_escape_string($con, $email);
+$phone = mysqli_real_escape_string($con,$phone);
+$place= mysqli_real_escape_string($con, $place);
+
 
   //All fields are null
   if (empty($username) || empty($email) || empty($phone) || empty($place)) {
