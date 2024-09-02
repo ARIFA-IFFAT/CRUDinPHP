@@ -1,0 +1,148 @@
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.form_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+form {
+  width: 450px;
+}
+.form_container label {
+  display: block;
+  margin-bottom: 10px;
+  color: #01384d;
+  font-weight: bold;
+  font-size: 18px;
+}
+span {
+  width: 100px;
+  color: #01384d;
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 18px;
+}
+.form_container fieldset {
+  border-radius: 10px;
+  border: 1px solid #023c42;
+  padding: 30px;
+  background: #bde0e7;
+}
+.form_container fieldset legend {
+  color: #01384d;
+  border: 1px solid #023c42;
+  border-bottom: 0;
+  border-radius: 5px 5px 0px 0px;
+  background: #bde0e7;
+  padding: 10px 15px;
+  font-size: 17px;
+  padding: 8px;
+}
+.form_container input[type="text"],
+.form_container input[type="number"],
+.form_container input[type="email"] {
+  border-radius: 100px;
+  border: 1px solid #023c42;
+  outline: none;
+  color: #01384d;
+  padding: 8px 16px;
+  background: #eff6f8;
+  width: 90%;
+  margin-bottom: 10px;
+}
+.required {
+  color: red;
+  font-weight: normal;
+}
+.submit_btn,
+.view_data {
+  background: #023c42;
+  border: 1px solid #eff6f8;
+  padding: 10px 30px;
+  color: #eff6f8;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 20px;
+}
+.view_data {
+  background: #eff6f8;
+  border: 1px solid #023c42;
+  color: #023c42;
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #01384d;
+  padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table_container {
+  margin: 20px 50px 50px;
+  box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.2);
+}
+
+.table {
+  font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: #fff;
+}
+.table th {
+  font-size: 20px;
+}
+
+.table td,
+.table th {
+  text-align: center;
+  padding: 15px;
+}
+
+.table td {
+  border-right: 1px solid #edebeb;
+  font-size: 15px;
+}
+
+.table thead th {
+  color: #fff;
+  background: #023c42;
+}
+
+.table tr:nth-child(even) {
+  background: #eff6f8;
+}
+.fa-pen-to-square {
+  color: #01384d;
+  margin-right: 20px;
+}
+.fa-trash {
+  color: rgb(246, 98, 98);
+}
+.no_records {
+  text-align: center;
+  color: rgb(246, 98, 98);
+  margin-top: 100px;
+}
+.footer {
+  background-color: #000;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #bde0e7;
+  padding: 5px 0;
+  margin: 0;
+}
