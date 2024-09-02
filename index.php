@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
     $username = ucfirst(strtolower(str_replace(" ", "", $username)));
     $place = ucfirst(strtolower(str_replace(" ", "", $place)));
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',$email)) {
       $error_msgs[] = $email_msg ;
     }
     if (strlen($phone) !== 10 || !ctype_digit($phone) || $phone <= 0) {
@@ -40,13 +40,13 @@ if (isset($_POST["submit"])) {
     if (empty($error_msgs)) {
       $check_query = "select * from crud where Username = '$username' or Email = '$email'";
       $check_query_result = mysqli_query($con, $check_query);
-      if (!$check_query_result) {
-        echo "<script>alert('Error checking existing data.')</script>";
-      }
+      
       if (mysqli_num_rows($check_query_result) > 0) {
         // Optionally, you can use $existing_user_email_error for further display or processing
         $error_msgs[] = $existing_user_email_error;
         // echo $existing_user_email_error;
+      }elseif (!$check_query_result) {
+        echo "<script>alert('Error checking existing data.')</script>";
       } else {
         //insert data in db
         $insert_query = "insert into crud (username, email, phone, place) values ('$username', '$email', '$phone', '$place')";
